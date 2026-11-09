@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#075985">
+  <title>Mi viaje para descubrir Colombia</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="barra">
+  <div class="marca"><span class="marca-icono">✦</span> MI VIAJE POR COLOMBIA</div>
+  <div class="progreso"><span id="pasoTexto">Bienvenida</span><span class="progreso-linea"><i id="progresoBarra"></i></span></div>
+</header>
+
+<main id="app">
+  <section class="pantalla activa" id="bienvenida" data-paso="0">
+    <div class="hero">
+      <div class="hero-texto">
+        <span class="etiqueta">UNA AVENTURA PARA EXPLORAR</span>
+        <h1>¡Hola! ¿Me ayudas a descubrir Colombia?</h1>
+        <p class="grande">Acabo de llegar a Colombia y estoy buscando una amiga o un amigo que me acompañe a conocer este país.</p>
+        <p>Hay tantos lugares, culturas e historias que no sé por dónde empezar. ¡Podemos descubrirlos juntos!</p>
+        <button class="btn principal" onclick="irA('rutas')">Comenzar el viaje <span>→</span></button>
+      </div>
+      <div class="hero-visual">
+        <div class="sol"></div>
+        <div class="mapa-colombia" aria-label="Mapa ilustrativo de Colombia">🇨🇴</div>
+        <div class="explorador" aria-label="Personaje explorador"><div class="burbuja">¡Hola, viajero!</div><div class="cara">🧑🏽‍🦱</div><div class="cuerpo">🧥</div></div>
+        <span class="decor decor-uno">✦</span><span class="decor decor-dos">✧</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pantalla" id="rutas" data-paso="1">
+    <div class="encabezado"><span class="etiqueta">PRIMERA PARADA</span><h2>¿Por dónde comenzamos?</h2><p>Escoge una ruta para iniciar nuestra aventura por Colombia.</p></div>
+    <div class="rejilla tres">
+      <button class="tarjeta-ruta cultura" onclick="irA('culturas')"><span class="icono-ruta">🎭</span><strong>Cultura</strong><small>Personas, lenguas, costumbres y formas de vivir.</small><span class="ver">Explorar ruta →</span></button>
+      <button class="tarjeta-ruta historia" onclick="mostrarAviso('Historia')"><span class="icono-ruta">📚</span><strong>Historia</strong><small>Historias, memorias y acontecimientos.</small><span class="ver">Próximamente</span></button>
+      <button class="tarjeta-ruta geografia" onclick="mostrarAviso('Geografía')"><span class="icono-ruta">🗺️</span><strong>Geografía</strong><small>Territorios, paisajes y lugares.</small><span class="ver">Próximamente</span></button>
+    </div>
+    <p class="aviso" id="avisoRutas" aria-live="polite"></p>
+    <button class="btn texto" onclick="irA('bienvenida')">← Volver</button>
+  </section>
+
+  <section class="pantalla" id="culturas" data-paso="2">
+    <div class="encabezado"><span class="etiqueta">RUTA: CULTURA</span><h2>¿A quiénes quieres conocer?</h2><p>En Colombia conviven pueblos y comunidades con historias y expresiones culturales diversas.</p></div>
+    <div class="rejilla cuatro">
+      <button class="tarjeta-pueblo" onclick="mostrarAviso('Pueblo Palenquero')"><span>🌴</span><strong>Pueblo Palenquero</strong><small>Próximamente</small></button>
+      <button class="tarjeta-pueblo" onclick="mostrarAviso('Poblaciones afrocolombianas')"><span>🌺</span><strong>Poblaciones afrocolombianas</strong><small>Próximamente</small></button>
+      <button class="tarjeta-pueblo seleccion" onclick="irA('raizal')"><span>🌊</span><strong>Pueblo Raizal</strong><small>Explorar esta ruta →</small></button>
+      <button class="tarjeta-pueblo" onclick="mostrarAviso('Región Andina')"><span>⛰️</span><strong>Región Andina</strong><small>Próximamente</small></button>
+    </div>
+    <p class="aviso" id="avisoCulturas" aria-live="polite"></p>
+    <button class="btn texto" onclick="irA('rutas')">← Volver a las rutas</button>
+  </section>
+
+  <section class="pantalla" id="raizal" data-paso="3">
+    <div class="encabezado"><span class="etiqueta">RUTA: PUEBLO RAIZAL</span><h2>¿Qué te gustaría conocer?</h2><p>Elige un aspecto para acercarte a algunas experiencias y expresiones de la vida raizal.</p></div>
+    <div class="rejilla cuatro">
+      <button class="tarjeta-pueblo" onclick="mostrarAviso('Gastronomía')"><span>🍲</span><strong>Gastronomía</strong><small>Próximamente</small></button>
+      <button class="tarjeta-pueblo" onclick="mostrarAviso('Lengua')"><span>🗣️</span><strong>Lengua: Kriol</strong><small>Próximamente</small></button>
+      <button class="tarjeta-pueblo" onclick="mostrarAviso('Música')"><span>🎶</span><strong>Música</strong><small>Próximamente</small></button>
+      <button class="tarjeta-pueblo seleccion" onclick="irA('vidaRaizal')"><span>🏡</span><strong>¿Cómo viven?</strong><small>Explorar esta experiencia →</small></button>
+    </div>
+    <p class="aviso" id="avisoRaizal" aria-live="polite"></p>
+    <button class="btn texto" onclick="irA('culturas')">← Volver a las culturas</button>
+  </section>
+
+  <section class="pantalla" id="vidaRaizal" data-paso="4">
+    <div class="contenido-dos">
+      <div class="ilustracion-grande isla"><span>🌴</span><span>🌊</span><span>🏠</span><span>🐚</span></div>
+      <div>
+        <span class="etiqueta">CONOZCAMOS EL TERRITORIO</span>
+        <h2>Una mirada a la vida en el territorio Raizal</h2>
+        <p>El territorio, el mar, las relaciones comunitarias y las prácticas cotidianas hacen parte de las experiencias de vida del pueblo Raizal.</p>
+        <p>Vamos a conocer una historia a través de un recurso audiovisual. Mientras lo vemos, pensemos: ¿qué podemos aprender de la forma en que otras personas viven y se relacionan con su territorio?</p>
+        <div class="nota">El Pueblo Raizal, en el marco del conflicto armando en el que estuvo sumido el pais vio afectada su integridad y autodeterminación, de esta manera como parte de reconocer y comprender la dimensión de la violencia la Comisión de la verdad expone las hiistorias de los habitantes del Archipielago <strong>video</strong> de la aplicación.</div>
+        <div class="video-marco">
+          <video controls preload="metadata" poster="img/La Verdad de SAI.jpeg">
+            <source src="video/La Verdad Del Pueblo Raizal.mp4" type="video/mp4">
+            
+          </video>
+          <small>Video: tomado de EL TIEMPO - Youtube - Reconocimiento de la verdad del Pueblo Negro, Afrocolombiano, Palenquero Y Raizal</small>
+        </div>
+        <button class="btn principal" onclick="irA('encuentro')">Continuar el viaje →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="pantalla" id="encuentro" data-paso="5">
+    <div class="encuentro">
+      <div class="personaje-card explorador-card"><div class="avatar">🧑🏽‍🦱</div><strong>Viajero</strong><small>Tu compañero de viaje</small></div>
+      <div class="dialogo-central">
+        <span class="etiqueta">UN NUEVO ENCUENTRO</span>
+        <h2>¡Conocimos a alguien!</h2>
+        <div class="globo"><p>“How yu de?”</p><small>Saludo en Kriol.</small></div>
+        <p>Mi nuevo amigo me saludó en una lengua que no conozco. Compañera o compañero de viaje, <strong>¿qué crees que debería hacer?</strong></p>
+        <div class="respuestas">
+          <button class="respuesta" onclick="responder('imponer')"><span>A</span> Decirle que hable como yo.</button>
+          <button class="respuesta" onclick="responder('ignorar')"><span>B</span> Ignorarlo porque no entiendo.</button>
+          <button class="respuesta" onclick="responder('escuchar')"><span>C</span> Escucharlo y preguntarle sobre su lengua.</button>
+        </div>
+        <div id="retroalimentacion" class="retro" aria-live="polite"></div>
+        <button id="continuarMemoria" class="btn principal oculto" onclick="irA('memoria')">Continuar →</button>
+      </div>
+      <div class="personaje-card raizal-card"><div class="avatar">🧑🏾‍🦱</div><strong>Nuevo amigo</strong><small>Hablante de Kriol</small></div>
+    </div>
+  </section>
+
+  <section class="pantalla" id="memoria" data-paso="6">
+    <div class="encabezado"><span class="etiqueta">JUEGO DE MEMORIA</span><h2>¡Ayúdame a recordar!</h2><p>Voltea las fichas y encuentra las parejas. ¡Recuerda lo que descubrimos durante el viaje!</p></div>
+    <div class="marcador">Parejas encontradas: <strong id="contadorParejas">0</strong> de 4</div>
+    <div class="tablero" id="tableroMemoria"></div>
+    <p id="mensajeMemoria" class="aviso" aria-live="polite">Busca las cuatro parejas.</p>
+    <button class="btn principal oculto" id="finMemoria" onclick="irA('final')">Terminar el viaje →</button>
+  </section>
+
+  <section class="pantalla" id="final" data-paso="7">
+    <div class="final-visual">🎉🌎🎉</div>
+    <span class="etiqueta">¡MISIÓN CUMPLIDA!</span>
+    <h2>¡Gracias por acompañarme!</h2>
+    <p class="grande">Hoy conocimos algunos aspectos de la vida del pueblo Raizal, escuchamos una lengua diferente y recordamos lo aprendido.</p>
+    <p>Conocer otras historias y formas de vivir nos ayuda a escuchar, aprender y reconocer a otras personas.</p>
+    <button class="btn principal" onclick="reiniciar()">Volver a comenzar ↻</button>
+  </section>
+</main>
+<footer>Un viaje para conocer Colombia · Prototipo educativo</footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+AVA COLOMBIA – PROTOTIPO VERSIÓN 2
+
+CÓMO ABRIR
+1. Descomprime la carpeta AVA_Colombia_v2 dentro de C:\xampp\htdocs\
+2. Enciende Apache desde XAMPP.
+3. Abre: http://localhost/AVA_Colombia_v2/
+
+QUÉ INCLUYE
+- Navegación de bienvenida a Cultura > Pueblo Raizal.
+- Escena de territorio y espacio reservado para video local.
+- Situación de convivencia con retroalimentación según la respuesta.
+- Juego de memoria de 8 fichas / 4 parejas.
+- Cierre de la experiencia.
+
+IMPORTANTE SOBRE EL VIDEO Y EL USO OFFLINE
+El video real todavía no está incluido. Cuando tengas un video propio o autorizado,
+guárdalo como video/vida-raizal.mp4. El HTML ya tiene preparado el reproductor.
+No se carga ningún video desde YouTube ni desde una URL externa.
+
+NOTA SOBRE KRIOL
+El saludo incluido es solo un ejemplo provisional. Antes de presentar el contenido
+como material lingüístico definitivo, conviene validarlo con una persona hablante
+de Kriol y decidir la grafía y traducción adecuadas.
+
+NOTA TÉCNICA
+Esta versión es una aplicación web local ejecutada mediante XAMPP. No requiere
+API de OpenAI, base de datos ni conexión a internet para navegar por las pantallas
+y usar el juego. La tipografía externa es decorativa; si se requiere funcionamiento
+totalmente desconectado, puede sustituirse por una fuente del sistema.
